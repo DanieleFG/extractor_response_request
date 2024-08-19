@@ -1,0 +1,30 @@
+
+{
+    "manifest_version": 2,
+    "name": "Network request Interceptor",
+    "version": "1.0",
+  
+    "description": "Captura URLs e cabeçalho de requisição",
+
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "webRequestFilterResponseService",       
+        "*://*.opopular.com.br/*",
+        "https://api-flip.ojc.com.br/edicao/por-produtos*"
+    ],
+
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.opopular.com.br/*"],
+        "js": ["content_scripts.js"]
+      }
+    ]
+  }
+  
